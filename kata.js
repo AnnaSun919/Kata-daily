@@ -18,21 +18,29 @@
 // Result: 12 and 39 are not coprimes
 
 function isCoprime(x, y) {
-  
-  let array =[]
-  let array2=[]
-  
-  
-for (let i =0 ; i <= x ; i ++ ){
-   x%i ===0 ? array.push(i):"";
+  let array = [];
+  let array2 = [];
+
+  for (let i = 0; i <= x; i++) {
+    x % i === 0 ? array.push(i) : "";
+  }
+
+  for (let i = 0; i <= y; i++) {
+    y % i === 0 ? array2.push(i) : "";
+  }
+
+  const comprise = array.filter((element) => array2.includes(element));
+
+  return comprise.length > 1 ? false : true;
 }
-  
-  for (let i =0 ; i <= y ; i ++ ){
-   y%i ===0 ? array2.push(i):"";
-}
-  
-const comprise = array.filter(element => array2.includes(element));
-    
-  
-  return comprise.length >1 ? false : true;
-}
+
+// 08/12/2021
+// var data = [
+//   {name: 'Joe', age: 20},
+//   {name: 'Bill', age: 30},
+//   {name: 'Kate', age: 23}
+// ]
+
+// getNames(data) // should return ['Joe', 'Bill', 'Kate']
+
+const array = (data) => data.map((item) => item.name);
