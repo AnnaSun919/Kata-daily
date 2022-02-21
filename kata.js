@@ -144,3 +144,19 @@ function jumpTo(x, y) {
   }
   return step;
 }
+
+// An isogram is a word that has no repeating letters, consecutive or non-consecutive. Implement a function that determines
+// whether a string that contains only letters is an isogram. Assume the empty string is an isogram. Ignore letter case.
+
+function isIsogram(str) {
+  const string = str.toLowerCase();
+
+  for (let b = 0; b < string.length; b++) {
+    for (let i = b + 1; i < string.length; i++) {
+      if (string[b] === string[i]) {
+        return false;
+      }
+    }
+  }
+  return true;
+}
