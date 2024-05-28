@@ -66,11 +66,10 @@ class Cache {
     //default lastaccess time
     cacheItem.lastAccess = Date.now();
 
-    if (Object.keys(this.cache).length === this.capacity) {
+    this.cache[key] = cacheItem;
+
+    if (Object.keys(this.cache).length > this.capacity) {
       this.deleteLowest();
-      this.cache[key] = cacheItem;
-    } else {
-      this.cache[key] = cacheItem;
     }
   }
 
